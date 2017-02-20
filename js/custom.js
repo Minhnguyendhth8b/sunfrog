@@ -1,0 +1,6 @@
+/*********************
+//* jQuery Multi Level CSS Menu (horizontal)- By Dynamic Drive DHTML code library: http://www.dynamicdrive.com
+//* Menu instructions page: http://www.dynamicdrive.com/dynamicindex1/ddlevelsmenu/
+//* Last modified: Sept 6th, 08'. Usage Terms: http://www.dynamicdrive.com/style/csslibrary/tos/
+*********************/
+/* Mobile Menu */(function(a){a.fn.mobileMenu=function(b){var e={defaultText:"Categories...",className:"select-menu",subMenuClass:"sub-menu",subMenuDash:"&ndash;&nbsp;"},d=a.extend(e,b),c=a(this);this.each(function(){c.find("ul").addClass(d.subMenuClass);a("<select />",{"class":d.className}).insertAfter(c);a("<option />",{value:"#",text:d.defaultText}).appendTo("."+d.className);c.find("a").each(function(){var i=a(this),g="&nbsp;"+i.text(),h=i.parents("."+d.subMenuClass),f=h.length,j;if(i.parents("ul").hasClass(d.subMenuClass)){j=Array(f+1).join(d.subMenuDash);g=j+g}a("<option />",{value:this.href,html:g,selected:(this.href==window.location.href)}).appendTo("."+d.className)});a("."+d.className).change(function(){var f=a(this).val();if(f!=="#"){window.location.href=a(this).val()}})});return this}})(jQuery);jQuery("document").ready(function(){jQuery(".jquerycssmenu").mobileMenu({className:"mobileMenu"})});
